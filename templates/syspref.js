@@ -1,5 +1,6 @@
-// This file can be used to configure global preferences for Firefox
-// Example: Homepage
-//pref("browser.startup.homepage", "http://www.weebls-stuff.com/wab/");
-
 user_pref("browser.startup.homepage", "http://haaga-helia.fi");
+user_pref("browser.startup.bookmark", "http://www.hhmoodle.haaga-helia.fi/login/index.php");
+user_pref("browser.startup.bookmarks", "http://www.hhmoodle.haaga-helia.fi/login/index.php");
+user_pref("browser.startup.bookmark", "http://www.terokarvinen.com");
+user_pref("browser.startup.bookmarks", "http://www.terokarvinen.com");
+
