@@ -8,17 +8,18 @@ class firefox {
 	file { '/etc/firefox/syspref.js' :
 		content => template ("firefox/syspref.js"),
 	}
-	
-	file { '/etc/puppet/modules/firefox/files/skripti.sh':
-      		ensure => 'file',
-      		path => '/etc/puppet/modules/firefox/files/skripti.sh',
-      		owner => 'root',
-      		group => 'root',
-      		mode  => '0755', 
-      		notify => Exec['extract_editor_script'],
- 	}
+	file { 'skripti.sh':
+                ensure => 'file',
+                source => 'puppet:///modules/firefox/skripti.sh',
+                path => '/usr/local/bin/skripti.sh',
+                owner => 'root',
+                group => 'root',
+                mode => '0744',
+                notify => Exec['run_my_script'],
+        }
 
-	exec { 'extract_editor_script':
-  		command => "/bin/bash -c '/vagrant/skripti.sh'",
-}
+        exec { 'run_my_script' :
+                command => '/usr/local/bin/skripti.sh',
+                refreshonly => true,
+        }
 }
