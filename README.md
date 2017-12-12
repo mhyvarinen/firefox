@@ -1,2 +1,2 @@
 # firefox
-firefoxin asennus ja syspref.js muokkaus
+firefoxin asennus, syspref.js muokkaus ja adblockin asennus
